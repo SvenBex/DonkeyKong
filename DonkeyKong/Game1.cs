@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace DonkeyKong
 {
@@ -11,6 +12,13 @@ namespace DonkeyKong
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private Texture2D mario;
+        private DateTime lastUpdate = DateTime.Now;
+        private Color color = Color.Red;
+        private Random rnd = new Random();
+        private Texture2D rectangle;
+        private Vector2 vector;
+        private Rectangle rec = new Rectangle(0,0,0,0);
 
         public Game1()
         {
@@ -41,6 +49,8 @@ namespace DonkeyKong
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            mario = Content.Load<Texture2D>("Mario jump");
+            
         }
 
         /// <summary>
@@ -73,9 +83,23 @@ namespace DonkeyKong
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Red);
+            if (lastUpdate.AddMilliseconds(500) < DateTime.Now )
+            {
+                lastUpdate = DateTime.Now;
+                color = new Color(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                //rectangle = new Texture2D(GraphicsDevice, rnd.Next(20, 300)*3, rnd.Next(20, 300)*3);
+                rec = new Rectangle(rnd.Next(1, 1000), rnd.Next(1, 1000), rnd.Next(1, 300), rnd.Next(1, 300));
+                //vector = new Vector2(rnd.Next(1000), rnd.Next(1000));
+            }
+            GraphicsDevice.Clear(color);
 
             // TODO: Add your drawing code here
+
+            spriteBatch.Begin();
+            rec = new Rectangle(rnd.Next(1, 1000), rnd.Next(1, 1000), rnd.Next(1, 300), rnd.Next(1, 300));
+            //spriteBatch.Draw(mario, new Vector2(100,-100));
+            spriteBatch.Draw(mario, vector, rec);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
