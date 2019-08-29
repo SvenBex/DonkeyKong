@@ -16,7 +16,6 @@ namespace DonkeyKong
         private DateTime lastUpdate = DateTime.Now;
         private Color color = Color.Red;
         private Random rnd = new Random();
-        private Texture2D rectangle;
         private Vector2 vector;
         private Rectangle rec = new Rectangle(0,0,0,0);
 
@@ -87,18 +86,16 @@ namespace DonkeyKong
             {
                 lastUpdate = DateTime.Now;
                 color = new Color(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                //rectangle = new Texture2D(GraphicsDevice, rnd.Next(20, 300)*3, rnd.Next(20, 300)*3);
-                rec = new Rectangle(rnd.Next(1, 1000), rnd.Next(1, 1000), rnd.Next(1, 300), rnd.Next(1, 300));
-                //vector = new Vector2(rnd.Next(1000), rnd.Next(1000));
+                rec = new Rectangle(100, 100, rnd.Next(1, 100), rnd.Next(1, 100));
+                vector = new Vector2(rnd.Next(100), rnd.Next(100));
             }
             GraphicsDevice.Clear(color);
 
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            rec = new Rectangle(rnd.Next(1, 1000), rnd.Next(1, 1000), rnd.Next(1, 300), rnd.Next(1, 300));
-            //spriteBatch.Draw(mario, new Vector2(100,-100));
-            spriteBatch.Draw(mario, vector, rec);
+            //spriteBatch.Draw(mario, new Vector2(100,100));
+            spriteBatch.Draw(mario, vector, rec, Color.Black);
             spriteBatch.End();
 
             base.Draw(gameTime);
