@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonkeyKong", "DonkeyKong.csproj", "{ECC717E0-6E81-4EB8-B2BF-3F7E0B7F4B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECC717E0-6E81-4EB8-B2BF-3F7E0B7F4B21}.Debug|x86.ActiveCfg = Debug|x86
+		{ECC717E0-6E81-4EB8-B2BF-3F7E0B7F4B21}.Debug|x86.Build.0 = Debug|x86
+		{ECC717E0-6E81-4EB8-B2BF-3F7E0B7F4B21}.Release|x86.ActiveCfg = Release|x86
+		{ECC717E0-6E81-4EB8-B2BF-3F7E0B7F4B21}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2041711-C6A6-4953-A141-26EC9DF06F63}
+	EndGlobalSection
+EndGlobal
