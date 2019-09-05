@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
+    <File>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/Platform.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Mario jump.png</File>
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
