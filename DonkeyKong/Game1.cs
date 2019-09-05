@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameController;
+using GameController.Interfaces;
+using GameController.KeyboardController;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -20,6 +23,7 @@ namespace DonkeyKong
         private Vector2 vector;
         private Rectangle marioRec = new Rectangle(0,0,400,346);
         private Rectangle platformRec = new Rectangle(500, 100, 100, 25);
+        private IControllerInput controller = new NonInvertedKeyboardBehaviour();
 
         public Game1()
         {
@@ -36,7 +40,6 @@ namespace DonkeyKong
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -73,7 +76,7 @@ namespace DonkeyKong
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (controller.MoveRight())
             {
                 var platVal = platformRec.Left;
                 var marioVal = marioRec.Right;
@@ -85,7 +88,7 @@ namespace DonkeyKong
                 
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            if (controller.MoveLeft())
             {
                 vector.X -= 5;
                 marioRec.X -= 5;
@@ -106,8 +109,8 @@ namespace DonkeyKong
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            spriteBatch.Draw(mario, marioRec, Color.White);
             spriteBatch.Draw(platform, platformRec, Color.Red);
+            spriteBatch.Draw(mario, vector, null, Color.White, 0.0F, new Vector2(0, 0), 1.0F, SpriteEffects.FlipHorizontally, 0.0F);
             //spriteBatch.Draw(mario, vector, rec, Color.Black);
             spriteBatch.End();
 

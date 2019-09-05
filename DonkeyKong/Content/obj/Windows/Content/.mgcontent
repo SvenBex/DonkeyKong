@@ -4,9 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
-    <File>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/Platform.png</File>
-    <File>C:/Users/thysdri/source/repos/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/Platform.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Mario jump.png</File>
