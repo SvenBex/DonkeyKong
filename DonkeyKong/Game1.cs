@@ -23,7 +23,7 @@ namespace DonkeyKong
         private Vector2 vector;
         private Rectangle marioRec = new Rectangle(0,0,400,346);
         private Rectangle platformRec = new Rectangle(500, 100, 100, 25);
-        private IControllerInput controller = new NonInvertedKeyboardBehaviour();
+        private IControllerInput controller;
 
         public Game1()
         {
@@ -40,6 +40,7 @@ namespace DonkeyKong
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            controller = new NonInvertedKeyboardBehaviour();
             base.Initialize();
         }
 
