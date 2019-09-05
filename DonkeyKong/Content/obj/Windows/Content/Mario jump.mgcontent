@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</SourceFile>
-  <SourceTime>2019-08-29T13:29:22.0634196+02:00</SourceTime>
-  <DestFile>C:/Users/svenbe/Documents/Projects/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Mario jump.xnb</DestFile>
-  <DestTime>2019-08-29T13:32:23.6160726+02:00</DestTime>
+  <SourceFile>C:/Users/thysdri/source/repos/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</SourceFile>
+  <SourceTime>2019-09-05T14:00:18.1707662+02:00</SourceTime>
+  <DestFile>C:/Users/thysdri/source/repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Mario jump.xnb</DestFile>
+  <DestTime>2019-09-05T14:01:16.3530542+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
