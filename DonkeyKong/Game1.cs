@@ -70,7 +70,15 @@ namespace DonkeyKong
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                vector.X += 5;
+            }
 
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                vector.X -= 5;
+            }
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -82,20 +90,20 @@ namespace DonkeyKong
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            if (lastUpdate.AddMilliseconds(500) < DateTime.Now )
-            {
-                lastUpdate = DateTime.Now;
-                color = new Color(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                rec = new Rectangle(100, 100, rnd.Next(1, 100), rnd.Next(1, 100));
-                vector = new Vector2(rnd.Next(100), rnd.Next(100));
-            }
+            //if (lastUpdate.AddMilliseconds(500) < DateTime.Now )
+            //{
+            //    lastUpdate = DateTime.Now;
+            //    color = new Color(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            //    rec = new Rectangle(100, 100, rnd.Next(1, 100), rnd.Next(1, 100));
+            //    vector = new Vector2(rnd.Next(100), rnd.Next(100));
+            //}
             GraphicsDevice.Clear(color);
 
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            //spriteBatch.Draw(mario, new Vector2(100,100));
-            spriteBatch.Draw(mario, vector, rec, Color.Black);
+            spriteBatch.Draw(mario, vector);
+            //spriteBatch.Draw(mario, vector, rec, Color.Black);
             spriteBatch.End();
 
             base.Draw(gameTime);
