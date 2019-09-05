@@ -109,6 +109,7 @@ namespace DonkeyKong
             spriteBatch.Draw(mario, marioRec, Color.White);
             spriteBatch.Draw(platform, platformRec, Color.Red);
             //spriteBatch.Draw(mario, vector, rec, Color.Black);
+            
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -41,8 +41,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Enums\PlayerInput.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Models\Mario.cs" />
+    <Compile Include="Interfaces\IDrawObject.cs" />
+    <Compile Include="Objects\AiPlayer.cs" />
+    <Compile Include="Objects\Environment.cs" />
+    <Compile Include="Objects\MovableObject.cs" />
+    <Compile Include="Objects\NonMovableObject.cs" />
+    <Compile Include="Objects\HumanPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,7 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Mario jump.xnb","TextureProcessor","Texture2DContent",5302,553685,0,4231969
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/balk.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/balk.xnb","TextureProcessor","Texture2DContent",486,257685,0,0156334
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/barrel.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/barrel.xnb","TextureProcessor","Texture2DContent",1164,59989,0,0156128
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/ladder.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/ladder.xnb","TextureProcessor","Texture2DContent",1057,189585,0,0156215
 "C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/mario.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/mario.xnb","TextureProcessor","Texture2DContent",2336,93029,0
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/Pauline.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Pauline.xnb","TextureProcessor","Texture2DContent",4371,504277,0,0312431
+"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/Platform.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Platform.xnb","TextureProcessor","Texture2DContent",186,10085,0,0999001
