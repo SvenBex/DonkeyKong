@@ -13,11 +13,13 @@ namespace DonkeyKong
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D mario;
+        private Texture2D platform;
         private DateTime lastUpdate = DateTime.Now;
-        private Color color = Color.Red;
+        private Color color = Color.Black;
         private Random rnd = new Random();
         private Vector2 vector;
-        private Rectangle rec = new Rectangle(0,0,0,0);
+        private Rectangle marioRec = new Rectangle(0,0,400,346);
+        private Rectangle platformRec = new Rectangle(500, 100, 100, 25);
 
         public Game1()
         {
@@ -49,6 +51,7 @@ namespace DonkeyKong
 
             // TODO: use this.Content to load your game content here
             mario = Content.Load<Texture2D>("Mario jump");
+            platform = Content.Load<Texture2D>("platform");
             
         }
 
@@ -72,15 +75,23 @@ namespace DonkeyKong
                 Exit();
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                vector.X += 5;
+                var platVal = platformRec.Left;
+                var marioVal = marioRec.Right;
+                if (marioRec.Right < platformRec.Left)
+                {
+                    vector.X += 5;
+                    marioRec.X += 5;
+                }
+                
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 vector.X -= 5;
+                marioRec.X -= 5;
             }
             // TODO: Add your update logic here
-
+            
             base.Update(gameTime);
         }
 
@@ -90,19 +101,13 @@ namespace DonkeyKong
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //if (lastUpdate.AddMilliseconds(500) < DateTime.Now )
-            //{
-            //    lastUpdate = DateTime.Now;
-            //    color = new Color(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-            //    rec = new Rectangle(100, 100, rnd.Next(1, 100), rnd.Next(1, 100));
-            //    vector = new Vector2(rnd.Next(100), rnd.Next(100));
-            //}
             GraphicsDevice.Clear(color);
 
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            spriteBatch.Draw(mario, vector);
+            spriteBatch.Draw(mario, marioRec, Color.White);
+            spriteBatch.Draw(platform, platformRec, Color.Red);
             //spriteBatch.Draw(mario, vector, rec, Color.Black);
             spriteBatch.End();
 
