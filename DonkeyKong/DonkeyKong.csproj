@@ -43,12 +43,6 @@
   <ItemGroup>
     <Compile Include="Enums\PlayerInput.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Interfaces\IDrawObject.cs" />
-    <Compile Include="Objects\AiPlayer.cs" />
-    <Compile Include="Objects\Environment.cs" />
-    <Compile Include="Objects\MovableObject.cs" />
-    <Compile Include="Objects\NonMovableObject.cs" />
-    <Compile Include="Objects\HumanPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +61,10 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj">
+      <Project>{ee0e9de5-cbfd-41f5-a5f1-914f837cba93}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{06184ecf-f2ab-4233-b01b-354e8172e30e}</Project>
       <Name>Controller</Name>

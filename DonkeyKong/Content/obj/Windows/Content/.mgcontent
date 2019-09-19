@@ -5,14 +5,12 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/balk.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/barrel.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/ladder.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/mario.png</File>
+    <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/Pauline.png</File>
     <File>C:/Users/heinott/Documents/DotNetAcademy/DonkeyKong/DonkeyKong/Content/Platform.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/1 XAksToqI3TyMLhcszTCmhg.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/balk.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/barrel.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/ladder.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/mario.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/Pauline.png</File>
-    <File>C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/Platform.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Mario jump.png</File>

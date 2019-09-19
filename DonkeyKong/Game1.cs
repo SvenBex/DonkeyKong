@@ -1,10 +1,10 @@
-﻿using GameController;
+﻿using Backend.Entities;
+using Backend.GameState;
 using GameController.Interfaces;
 using GameController.KeyboardController;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace DonkeyKong
 {
@@ -15,15 +15,12 @@ namespace DonkeyKong
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Texture2D mario;
-        private Texture2D platform;
-        private DateTime lastUpdate = DateTime.Now;
-        private Color color = Color.Black;
-        private Random rnd = new Random();
-        private Vector2 vector;
-        private Rectangle marioRec = new Rectangle(0,0,400,346);
-        private Rectangle platformRec = new Rectangle(500, 100, 100, 25);
+        private ObjectPositionRepository positionRepository;
         private IControllerInput controller;
+
+        //Old stuff
+        private Texture2D platform;
+        private Color color = Color.Black;
 
         public Game1()
         {
@@ -41,6 +38,8 @@ namespace DonkeyKong
         {
             // TODO: Add your initialization logic here
             controller = new NonInvertedKeyboardBehaviour();
+            positionRepository = ObjectPositionRepository.InitializeRepository();
+
             base.Initialize();
         }
 
@@ -53,9 +52,38 @@ namespace DonkeyKong
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-            mario = Content.Load<Texture2D>("Mario jump");
-            platform = Content.Load<Texture2D>("platform");
+            //TODO Improve this
+            Player player = new Player
+            {
+                Id = 1,
+                PlayerLives = 1,
+                Texture = Content.Load<Texture2D>("Mario jump"),
+                DestinationRectangle = new Rectangle(0, 0, 400, 346),
+                SourceRectangle = null,
+                Color = Color.White,
+                Rotation = 0.0f,
+                Origin = new Vector2(),
+                Effects = SpriteEffects.None,
+                LayerDepth = 0.0f
+            };
+
+            positionRepository.AddPlayerPosition(player);
+
+            Platform platform1 = new Platform
+            {
+                Id = 1,
+                ObjectIsSolid = true,
+                Texture = Content.Load<Texture2D>("platform"),
+                DestinationRectangle = new Rectangle(500, 100, 100, 25),
+                SourceRectangle = null,
+                Color = Color.White,
+                Rotation = 0.0f,
+                Origin = new Vector2(),
+                Effects = SpriteEffects.None,
+                LayerDepth = 0.0f
+            };
+
+            positionRepository.AddSolidPosition(platform1);
             
         }
 
@@ -75,26 +103,8 @@ namespace DonkeyKong
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            if (controller.MoveRight())
-            {
-                var platVal = platformRec.Left;
-                var marioVal = marioRec.Right;
-                if (marioRec.Right < platformRec.Left)
-                {
-                    vector.X += 5;
-                    marioRec.X += 5;
-                }
-                
-            }
-
-            if (controller.MoveLeft())
-            {
-                vector.X -= 5;
-                marioRec.X -= 5;
-            }
-            // TODO: Add your update logic here
+            MovementBehaviour.UpdateObjectPositions(positionRepository, controller);
+            GameRules.CheckGameRules(positionRepository);
             
             base.Update(gameTime);
         }
@@ -106,15 +116,7 @@ namespace DonkeyKong
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(color);
-
-            // TODO: Add your drawing code here
-
-            spriteBatch.Begin();
-            spriteBatch.Draw(platform, platformRec, Color.Red);
-            spriteBatch.Draw(mario, vector, null, Color.White, 0.0F, new Vector2(0, 0), 1.0F, SpriteEffects.FlipHorizontally, 0.0F);
-            //spriteBatch.Draw(mario, vector, rec, Color.Black);
-            
-            spriteBatch.End();
+            ObjectDrawer.Draw(spriteBatch, positionRepository);
 
             base.Draw(gameTime);
         }

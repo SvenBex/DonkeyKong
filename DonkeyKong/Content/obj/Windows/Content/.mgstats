@@ -1,3 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/mario.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/mario.xnb","TextureProcessor","Texture2DContent",2336,93029,0
-"C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/Platform.png","C:/Users/User/Source/Repos/DonkeyKong/DonkeyKong/Content/bin/Windows/Content/Platform.xnb","TextureProcessor","Texture2DContent",186,10085,0,0999001
